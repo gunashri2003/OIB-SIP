@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHRI'S NRITHYALAYA</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+            background: rgba(255, 255, 255, 0.5) url('https://i.pinimg.com/564x/7d/25/aa/7d25aaf63b0fb7e674aea91e04a8e9d6.jpg') center/cover no-repeat;
+        }
+
+        header {
+            position: relative;
+            height: 50vh;
+            background: url('https://i.pinimg.com/736x/96/cd/fe/96cdfec91cbc03c96c5a9475d66352d7.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white; /* Text color changed to black */
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white; /* Text color changed to black */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .about-section {
+            background: url('about_bg.jpg') center/cover no-repeat;
+            color: black; /* Text color changed to black */
+        }
+
+        .classes-section {
+            background:url('https://images.unsplash.com/photo-1617637188020-c3d1caa37868?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            color: black; /* ext color changed to black */
+        }
+
+        .instructors-section {
+            background: url('') center/cover no-repeat;
+            color: black; 
+        }
+
+        .events-section {
+            background: url('https://images.unsplash.com/photo-1632962237468-0705d7e7b534?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')center/cover no-repeat;
+            color: black; /* Text color changed to black */
+        }
+
+        .contact-section {
+            background: url('contact_bg.jpg') center/cover no-repeat;
+            color: #000; /* Text color changed to black */
+        }
+
+        .paragraph-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .classes-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .class-box {
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .class-box:hover {
+            transform: scale(1.05);
+        }
+
+        .instructors-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .instructor-box {
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .instructor-box:hover {
+            transform: scale(1.05);
+        }
+
+        .events-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-event {
+            width: 70%;
+            margin-bottom: 20px;
+        }
+
+        .normal-event {
+            width: 30%;
+            margin: 10px;
+        }
+        .event-box {
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .event-box img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .event-box:hover {
+            transform: scale(1.05);
+        }
+
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-details {
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+       
+        
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SHRI'S NRITHYALAYA</h1>
+        <p>Dance with Passion, Move with Grace</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#classes">Classes</a>
+        <a href="#instructors">Instructors</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about-section">
+        <div class="paragraph-section" style="animation: fadeIn 1s ease-in-out;">
+            <h2>About Us</h2>
+            <p>Welcome to Shri's Nrithyalaya, where dance is celebrated with passion and grace. Our school is devoted to preserving and promoting the rich cultural heritage of Bharatanatyam in the "Vazhuvoor" style. Students have graced temples including Chidambaram, Malaysia Murugan Temple, Thanjavur Periya Kovil, Trivandrum, Guruvayur Temple, and more, showcasing their artistry.</p>
+        </div>
+    </section>
+
+    <section id="classes" class="classes-section">
+        <div class="paragraph-section" style="animation: fadeIn 1s ease-in-out;">
+            <h2 style="color: white">Classes</h2>
+            <p style="color:gold">Weekly schedule for classes goes below:</p>
+            <div class="classes-container">
+                <div class="class-box">
+                    <img src="https://i.pinimg.com/564x/f3/0e/1b/f30e1b9169d65b2d70f55bb0ddf29846.jpg" alt="Class 1 Image" style="width: 100%;">
+                    <p>Class 1(Theory)</p>
+                    <p>Timings: 5:00 PM - 6:30 PM</p>
+                    <p>Days: Monday, Wednesday</p>
+                </div>
+                <div class="class-box">
+                    <img src="https://i.pinimg.com/564x/bc/5a/81/bc5a8182737af094e1ffd45cf6bcc5ad.jpg" alt="Class 2 Image" style="width: 100%;">
+                    <p>Class 2(Adavu)</p>
+                    <p>Timings: 6:30 PM - 8:00 PM</p>
+                    <p>Days: Tuesday, Thursday</p>
+                </div>
+                <div class="class-box">
+                    <img src="https://i.pinimg.com/564x/5d/58/dc/5d58dc8f43fa1db700b8430c048d1511.jpg" alt="Class 3 Image" style="width: 100%;">
+                    <p>Class 3(Bhavana)</p>
+                    <p>Timings: 4:00 PM - 5:30 PM</p>
+                    <p>Days: Friday, Saturday</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instructors" class="instructors-section">
+        <div class="instructors-container" style="animation: fadeIn 1s ease-in-out;">
+            <h2 style="color:black">Instructors :<br></h2>
+            <div class="instructor-box" style="order: 2;">
+                <img src="https://i.pinimg.com/564x/da/dd/61/dadd61664077ca53c6c39e3b4879161e.jpg" alt="Center Guru Image" style="width: 100%;">
+                <p>Mythili Krishnakumar</p>
+            </div>
+            <div class="instructor-box" style="order: 1;">
+                <img src="https://i.pinimg.com/564x/89/44/cb/8944cbceb5a53261868e184dd8271c8d.jpg" alt="Left Guru Image" style="width: 100%;">
+                <p>Kayalvizhi Rajasekaran</p>
+            </div>
+            <div class="instructor-box" style="order: 3;">
+                <img src="https://i.pinimg.com/564x/4c/97/a9/4c97a9081ef31740b90aab77f187252e.jpg" alt="Right Guru Image" style="width: 100%;">
+                <p>Yaalini Vishwakumar</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section">
+        <div class="events-container" style="animation: fadeIn 1s ease-in-out;">
+            <h2 style="color: white">Events</h2>
+            <div class="main-event">
+                <p style="color:white">Annual Dance Showcase</p>
+                <p style="color:gold">Join us for an enchanting evening of performances by our talented students.</p>
+            </div>
+            <div class="event-box">
+                <img src="https://i.pinimg.com/564x/b8/0e/63/b80e63cc081fcc7b3a92204e1f206c76.jpg" alt="Event 1 Image">
+                <p>Event 1 : A Dancer's Heart</p>
+                <p>Month: June</p>
+            </div>
+            <div class="event-box">
+                <img src="https://i.pinimg.com/564x/35/3e/ce/353ece36b3e5207db5f654272d625cbc.jpg" alt="Event 2 Image">
+                <p>Event 2 : The Best Abhinaya Fest</p>
+                <p>Month: September</p>
+            </div>
+            <div class="event-box">
+                <img src="https://i.pinimg.com/564x/2a/97/e3/2a97e310ee0558c690b451a3593a3093.jpg" alt="Event 3 Image">
+                <p>Event 3 : The Perfect Duo</p>
+                <p>Month: December</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container" style="animation: fadeIn 1s ease-in-out;">
+            <h2>Contact</h2>
+            <div class="contact-details">
+                <p>For inquiries and registration, contact us:</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Email: info@shrisnrithyalaya.com</p>
+                <p>Address: No:1,Vijaya Street,T.Nagar, Chennai</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Shri's Nrithyalaya. All rights reserved.</p>
+    </footer>
+</body>
+</html>

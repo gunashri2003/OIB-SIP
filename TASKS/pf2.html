@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunashri S - My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1496824000084-3b2dc58685d4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: black;
+            text-align: center;
+            padding: 50px;
+            background-image: linear-gradient(to right, #333 50%, #555 50%);
+        }
+
+        #profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        #profile-image {
+            width: 150px;
+            height: 150px;
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        #portfolio-heading {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #name {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .column {
+            width: 48%;
+            margin: 10px;
+        }
+
+        #workshops-section {
+            padding: 30px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        #workshops-section img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        #hackerrank-section, #extra-curriculars-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        #hackerrank-section .column, #extra-curriculars-section .column {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        #hackerrank-section .column div, #extra-curriculars-section ul {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        #extra-curriculars-section ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        #extra-curriculars-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="profile-section">
+            <img src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Image" id="profile-image">
+            <div>
+                <div id="portfolio-heading">Gunashri S </div>
+                <div id="name">Portfolio</div>
+            </div>
+        </div>
+    </header>
+
+    <div id="language-section" class="section">
+        <div class="row">
+            <div class="column">
+                <div><strong>Language Proficiency:</strong></div>
+                <ul>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Basic C</li>
+                    <li>HTML/CSS (Front End)</li>
+                    <li>MySQL (Back End)</li>
+                </ul>
+            </div>
+            <div class="column">
+                <div><strong>Education:</strong></div>
+                <p><strong>Primary and Secondary School</strong><br>Balalok Matriculation Hr.Sec.School, Virugambakkam<br><strong>Higher Secondary School</strong><br>Saraswathi Vidyalaya, Vadapalani<br>
+                <strong>Bachelor of Engineering (Currently Pursuing)</strong><br>Panimalar Engineering College, Poonamalle<br>Computer Science Dept.<br>3rd Year</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="workshops-section" class="section">
+        <div>Participated in over 10 workshops and webinars, acquiring valuable insights and knowledge.</div>
+        <div class="row">
+            <img src="https://i.pinimg.com/564x/5b/68/94/5b68942f0cff8e679d0b4c876e314205.jpg" alt="Workshop Image 1">
+            
+        </div>
+    </div>
+
+    <div id="skills-section" class="section">
+        <div class="row">
+            <div class="column">
+                <div><strong>Soft Skills:</strong></div>
+                <ul>
+                    <li>Time Management</li>
+                    <li>Creativity</li>
+                    <li>Workaholic</li>
+                    <li>Confidence</li>
+                    <li>Critical Thinking </li>
+                </ul>
+            </div>
+            <div class="column">
+                <div><strong>GPA:</strong></div>
+                <ul>
+                    <li>1st Year: 8.8</li>
+                    <li>2nd Year: 9.1</li>
+                    <li>3rd Year: 9.5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="company-section" class="section">
+        <div><strong>Embarked on an enriching experience: Company Visit at Ashok Leyland.</strong></div>
+        <img src="https://i.pinimg.com/564x/4a/e7/03/4ae7036d6fcefaef89768580d46c8082.jpg" alt="Ashok Leyland Image">
+        <div><strong>Knowledge Acquired:</strong></div>
+        <p>During our internship at Ashok Leyland, we gained insights into the company's advanced approach to automotive product development through PLM, emphasizing the use of 3DEXPERIENCE and SAP. We explored tools like CATIA and learned about automation using VB Script and Macros. The Automotive Instrumentation Department provided valuable insights into IoT applications, including an Arduino Uno project for vehicle testing. The Advanced Engineering Department showcased innovative IoT applications in automated gear transition, highlighting Ashok Leyland's commitment to cutting-edge technology in automotive testing and innovation.</p>
+    </div>
+
+    <div id="hackerrank-extra-curriculars-section" class="section">
+        <div class="row">
+            <div id="hackerrank-section" class="column">
+                <div><strong>Hackerrank Profile:</strong></div>
+                <div>Python: Bronze (★★)</div>
+                <div>Java: Silver (★★★★)</div>
+            </div>
+            <div id="extra-curriculars-section" class="column">
+                <div><strong>Extra-curriculars:</strong></div>
+                <ul>
+                    <li>2021 Third Runner-up in Inter-Dept Singing</li>
+                    <li>2022 First Champion in Relay</li>
+                    <li>2019 Second Runner-up in Dance in Talent-show, Cognizant</li>
+                    <li>2022 NGO Volunteer in Ashok Leyland</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="engagement-section" class="section">
+        <div><strong>Engaged in:</strong></div>
+        <ul>
+            <li>Udemy</li>
+            <li>Hackerrank</li>
+            <li>Code Chef</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <div><strong>Contact:</strong></div>
+        <div>📞 9123515056</div>
+        <div>📧 gunashri2003@gmail.com</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            background-image: url('https://images.unsplash.com/photo-1560977501-7cb367eccebe?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .converter-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-right: 10px; /* Added margin to create space between Convert and Reload buttons */
+            margin-bottom: 10px; /* Added margin to remove empty space below the Convert button */
+        }
+
+        button.reload-btn {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button.reload-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .sidebar h2 {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar li span {
+            color: #45a049;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="converter-container">
+            <h1>Temperature Converter</h1>
+            <div class="input-container">
+                <label for="celsius">Celsius:</label>
+                <input type="number" id="celsius" placeholder="Enter Celsius">
+            </div>
+            <div class="input-container">
+                <label for="fahrenheit">Fahrenheit:</label>
+                <input type="number" id="fahrenheit" placeholder="Enter Fahrenheit">
+            </div>
+            <div class="input-container">
+                <label for="kelvin">Kelvin:</label>
+                <input type="number" id="kelvin" placeholder="Enter Kelvin">
+            </div>
+            <button onclick="convertTemperature()">Convert</button>
+            <button class="reload-btn" onclick="reloadPage()">Reload</button>
+        </div>
+
+        <div class="sidebar">
+            <h2>Previous Value</h2>
+            <ul id="previousValues"></ul>
+        </div>
+    </div>
+
+    <script>
+        // Load previous values from local storage
+        window.onload = function() {
+            displayPreviousValues();
+        };
+
+        function convertTemperature() {
+            // Get input values
+            let celsiusInput = document.getElementById("celsius");
+            let fahrenheitInput = document.getElementById("fahrenheit");
+            let kelvinInput = document.getElementById("kelvin");
+
+            // Convert Celsius to Fahrenheit and Kelvin
+            if (celsiusInput.value !== "") {
+                let celsiusValue = parseFloat(celsiusInput.value);
+                let fahrenheitValue = (celsiusValue * 9/5) + 32;
+                let kelvinValue = celsiusValue + 273.15;
+
+                fahrenheitInput.value = fahrenheitValue.toFixed(2);
+                kelvinInput.value = kelvinValue.toFixed(2);
+
+                // Save the values to local storage
+                saveToLocalStorage(celsiusValue, fahrenheitValue, kelvinValue);
+            } else {
+                fahrenheitInput.value = "";
+                kelvinInput.value = "";
+            }
+
+           
+
+ // Convert Fahrenheit to Celsius and Kelvin
+            if (fahrenheitInput.value !== "") {
+                let fahrenheitValue = parseFloat(fahrenheitInput.value);
+                let celsiusValue = (fahrenheitValue - 32) * 5/9;
+                let kelvinValue = (fahrenheitValue + 459.67) * 5/9;
+
+                celsiusInput.value = celsiusValue.toFixed(2);
+                kelvinInput.value = kelvinValue.toFixed(2);
+
+                // Save the values to local storage
+                saveToLocalStorage(celsiusValue, fahrenheitValue, kelvinValue);
+            } else {
+                celsiusInput.value = "";
+                kelvinInput.value = "";
+            }
+
+            // Convert Kelvin to Celsius and Fahrenheit
+            if (kelvinInput.value !== "") {
+                let kelvinValue = parseFloat(kelvinInput.value);
+                let celsiusValue = kelvinValue - 273.15;
+                let fahrenheitValue = (kelvinValue * 9/5) - 459.67;
+
+                celsiusInput.value = celsiusValue.toFixed(2);
+                fahrenheitInput.value = fahrenheitValue.toFixed(2);
+
+                // Save the values to local storage
+                saveToLocalStorage(celsiusValue, fahrenheitValue, kelvinValue);
+            } else {
+                celsiusInput.value = "";
+                fahrenheitInput.value = "";
+            }
+
+            // Display the updated list of previous values
+            displayPreviousValues();
+        }
+
+        function saveToLocalStorage(celsius, fahrenheit, kelvin) {
+            // Save the most recent values to local storage
+            let recentValues = { celsius, fahrenheit, kelvin };
+            localStorage.setItem("recentValues", JSON.stringify(recentValues));
+        }
+
+        function displayPreviousValues() {
+            // Clear the previous values list
+            document.getElementById("previousValues").innerHTML = "";
+
+            // Retrieve the most recent values from local storage
+            let recentValues = JSON.parse(localStorage.getItem("recentValues"));
+
+            // Display the most recent set of previous values
+            if (recentValues) {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = `<span>Celsius:</span> ${recentValues.celsius.toFixed(2)} 
+                                     <span>Fahrenheit:</span> ${recentValues.fahrenheit.toFixed(2)} 
+                                     <span>Kelvin:</span> ${recentValues.kelvin.toFixed(2)}`;
+                document.getElementById("previousValues").appendChild(listItem);
+            }
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
